@@ -4,7 +4,7 @@ MAINTAINER developers@ninjablocks.com
 RUN apt-get -qy update && apt-get -qy install supervisor
 COPY etc/supervisord.conf /etc/supervisord.conf
 COPY etc/supervisor/conf.d/service.conf /etc/supervisor/conf.d/service.conf
-
+COPY service-wrapper.sh /usvc/service-wrapper.sh
 RUN mkdir -p /usvc
 
 CMD ["/usr/bin/supervisord"]
