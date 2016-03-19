@@ -1,5 +1,8 @@
 SHA1:=$(shell git rev-parse --short HEAD | tr -d '\n')
 IMAGE?=ninjasphere/usvc-runtime
+
+default: tag
+
 image:
 	docker build -t $(IMAGE) .
 
